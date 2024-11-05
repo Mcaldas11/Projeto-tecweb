@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Fundo gradiente suave */
+    color: #333;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+    animation: fadeIn 1s ease-in-out; /* Animação de fade-in */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    background-color: #009688; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto do cabeçalho */
+    padding: 20px;
+    text-align: center; /* Texto centralizado no cabeçalho */
+    animation: slideDown 0.7s ease-out; /* Animação ao descer */
+    position: sticky; /* Cabeçalho permanece fixo ao rolar */
+    top: 0; /* Fixo ao topo da página */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    transition: background-color 0.3s ease; /* Transição suave para mudança de cor */
+}
+
+header:hover {
+    background-color: #00796b; /* Tom mais escuro ao passar o mouse */
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em; /* Tamanho do título */
+    animation: fadeInScale 1s ease; /* Animação de escala e fade-in */
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+nav {
+    margin: 20px 0; /* Margem para separar o menu do título */
+}
+
+nav a {
+    color: white; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado dos links */
+    margin: 0 15px; /* Espaçamento entre os links */
+    font-weight: bold; /* Negrito para os links */
+    padding: 10px 15px; /* Padding para um efeito de botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    position: relative; /* Posição relativa para animação */
+    overflow: hidden; /* Ocultar partes que saem do container */
+    transition: color 0.3s, transform 0.3s; /* Transições suaves */
+}
+
+nav a:hover {
+    color: #ffd54f; /* Cor dourada mais escura e legível ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+nav a:focus {
+    outline: 2px solid #ffe082; /* Borda amarela ao focar no link */
+    background-color: #004d40; /* Fundo escuro para mais destaque */
+}
+
+.section {
+    padding: 20px;
+    margin: 20px; /* Margem em torno das seções */
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.profile-img, .section-img {
+    width: 100%; /* Imagem responsiva */
+    max-width: 600px; /* Largura máxima das imagens */
+    border-radius: 10px; /* Bordas arredondadas para imagens */
+    margin: 20px 0; /* Margem em cima e embaixo das imagens */
+}
+
+.tables-container {
+    display: flex; /* Usar flexbox para exibir as tabelas lado a lado */
+    justify-content: space-between; /* Espaçamento entre as tabelas */
+    gap: 20px; /* Espaçamento entre as tabelas */
+    flex-wrap: wrap; /* Permitir quebra de linha em telas menores */
+}
+
+.table-wrapper {
+    flex: 1; /* Permite que as tabelas ocupem espaço igual */
+    min-width: 300px; /* Largura mínima das tabelas */
+}
+
+.conquest-table {
+    width: 100%; /* Tabela ocupa toda a largura do container */
+    border-collapse: collapse; /* Colapsar bordas da tabela */
+    margin-bottom: 20px; /* Margem inferior para espaçamento */
+    background: #ffffff; /* Fundo branco para a tabela */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Ocultar bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.conquest-table th, .conquest-table td {
+    padding: 15px; /* Padding nas células */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    border-bottom: 1px solid #ddd; /* Linha de separação entre as linhas */
+}
+
+.conquest-table th {
+    background-color: #009688; /* Cor de fundo para cabeçalho */
+    color: white; /* Cor do texto do cabeçalho */
+}
+
+.conquest-table tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse nas linhas */
+}
+
+.video-layer {
+    background-color: #f9f9f9; /* cor de fundo clara */
+    padding: 20px;
+    margin-top: 20px; /* espaço acima da seção */
+    border: 1px solid #ccc; /* borda suave */
+    text-align: center; /* centraliza o texto */
+}
+
+.video-layer iframe {
+    max-width: 100%; /* responsividade do vídeo */
+    height: auto; /* manter a proporção */
+}
+
+footer {
+    text-align: center; /* Centraliza o texto do rodapé */
+    padding: 20px; /* Padding do rodapé */
+    background-color: #009688; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto do rodapé */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #00796b; /* Tom mais escuro no hover */
+    color: #e0f7fa; /* Cor clara no hover */
+}
+
+/* Estilo para tornar o site responsivo */
+@media (max-width: 768px) {
+    nav a {
+        display: block; /* Coloca links em uma coluna em telas pequenas */
+        margin: 10px 0; /* Ajusta a margem para links em coluna */
+    }
+
+    .tables-container {
+        flex-direction: column; /* Coloca as tabelas em coluna em telas pequenas */
+    }
+
+    .table-wrapper {
+        margin-bottom: 20px; /* Margem inferior entre tabelas */
+    }
+
+    .section {
+        padding: 15px; /* Padding menor para telas pequenas */
+    }
+
+    body {
+        font-size: 16px; /* Tamanho de fonte maior em telas menores */
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Reduz tamanho do título em telas pequenas */
+    }
+
+    .conquest-table th, .conquest-table td {
+        padding: 10px; /* Padding menor nas células para mais espaço */
+    }
+}
+
+.profile-img, .section-img {
+    max-width: 90%; /* Margem em torno das imagens para telas menores */
+    margin: 10px auto; /* Centraliza a imagem */
+}
