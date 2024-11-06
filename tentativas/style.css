@@ -189,3 +189,8 @@ footer:hover {
     max-width: 90%; /* Margem em torno das imagens para telas menores */
     margin: 10px auto; /* Centraliza a imagem */
 }
+
+.img1{
+    width: 200px;
+    height: 100px;
+}
