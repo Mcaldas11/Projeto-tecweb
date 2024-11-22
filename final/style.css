@@ -1,0 +1,235 @@
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #444;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    background: linear-gradient(45deg, #556b2f, #6e7f46);
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+    animation: header-animation 6s infinite linear;
+    transform: rotate(45deg);
+}
+
+@keyframes header-animation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: fade-in 2s ease;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header img {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+header nav {
+    margin-top: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+header nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #a2b86c;
+    bottom: -5px;
+    left: 50%;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+header nav a:hover {
+    color: #dce775;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Seções principais */
+.section {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+    opacity: 0;
+    animation: section-appear 0.6s forwards;
+}
+
+.section:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+.section:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+@keyframes section-appear {
+    to { transform: scale(1); opacity: 1; }
+}
+
+.section h2 {
+    color: #556b2f;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: #a2b86c;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section p {
+    text-align: justify;
+    animation: text-slide 1s ease forwards;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+@keyframes text-slide {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Imagens */
+.img1, .img2, .img3, .img4 {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img1:hover, .img2:hover, .img3:hover, .img4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Tabelas */
+.conquest-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    animation: table-fade-in 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes table-fade-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.conquest-table th, 
+.conquest-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.conquest-table th {
+    background: #6e7f46;
+    color: #fff;
+}
+
+.conquest-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #556b2f;
+    color: #fff;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    animation: slide-in 1s ease;
+}
+
+@keyframes slide-in {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Botões */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #6e7f46;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #a2b86c;
+}
